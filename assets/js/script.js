@@ -1,102 +1,89 @@
-/* Input student name and grade */
-let student__name = prompt('Nombre\nEj: Felipe', 'Felipe');
-let student__lastname = prompt('Apellido\nEj: Martinez', 'Martinez');
-let grade = prompt(`Carrera\nEj: Desarrollo Fullstack`, `Desarrollo Fullstack`);
+let estudiante__nombre = prompt("¿Nombre? (ENTER)", "Pedro");
+let estudiante__apellido = prompt("¿Apellido?", "Donoso");
+let grado = prompt(`¿Qué estás estudiando?`, `Python`);
 
-/* Input course and scores */
-let course__1 = prompt('Ingrese el primer ramo\nEj: HTML', 'HTML');
-let course__1__score1 = prompt(`Ingrese nota 1 en ${course__1}\nEj: 7.0`, '7');
-let course__1__score2 = prompt(`Ingrese nota 2 en ${course__1}\nEj: 7.0`, '7');
-let course__1__score3 = prompt(`Ingrese nota 3 en ${course__1}\nEj: 7.0`, '7');
-let course__2 = prompt('Ahora ingrese el segundo ramo\nEj: CSS', 'CSS');
-let course__2__score1 = prompt(`Ingrese nota 1 en ${course__2}\nEj: 7.0`, '7');
-let course__2__score2 = prompt(`Ingrese nota 2 en ${course__2}\nEj: 7.0`, '7');
-let course__2__score3 = prompt(`Ingrese nota 3 en ${course__2}\nEj: 7.0`, '7');
-let course__3 = prompt('Finalmente, ingrese el tercer ramo\nEj: JavaScript', 'JavaSript');
-let course__3__score1 = prompt(`Ingrese nota 1 en ${course__3}\nEj: 7.0`, '7');
-let course__3__score2 = prompt(`Ingrese nota 2 en ${course__3}\nEj: 7.0`, '7');
-let approve__score = prompt('¿Cuál es la nota mínima para aprobar?\nEj: 4', '4');
+let curso__1 = prompt("¿Asignatura 1?", "Ruby");
+let curso__1__puntaje1 = prompt(`¿nota 1? de: ${curso__1}`, "4");
+let curso__1__puntaje2 = prompt(`¿nota 2? de: ${curso__1}`, "4");
+let curso__1__puntaje3 = prompt(`¿nota 3? de: ${curso__1}`, "4");
+let curso__2 = prompt("¿Asignatura 2?", "GIT");
+let curso__2__puntaje1 = prompt(`¿nota 1? de: ${curso__2}`, "4");
+let curso__2__puntaje2 = prompt(`¿nota 2? de: ${curso__2}`, "4");
+let curso__2__puntaje3 = prompt(`¿nota 3? de: ${curso__2}`, "4");
+let curso__3 = prompt("¿Asignatura 3?", "Vue JS");
+let curso__3__puntaje1 = prompt(`¿nota 1? de: ${curso__3}`, "4");
+let curso__3__puntaje2 = prompt(`¿nota 2? de: ${curso__3}`, "4");
+let aprobacion = prompt("Dime la nota mínima de aprobación", "4");
 
-/* trasform string to int type */
-course__1__score1 = parseInt(course__1__score1);
-course__1__score2 = parseInt(course__1__score2);
-course__1__score3 = parseInt(course__1__score3);
-course__2__score1 = parseInt(course__2__score1);
-course__2__score2 = parseInt(course__2__score2);
-course__2__score3 = parseInt(course__2__score3);
-course__3__score1 = parseInt(course__3__score1);
-course__3__score2 = parseInt(course__3__score2);
+curso__1__puntaje1 = parseInt(curso__1__puntaje1);
+curso__1__puntaje2 = parseInt(curso__1__puntaje2);
+curso__1__puntaje3 = parseInt(curso__1__puntaje3);
+curso__2__puntaje1 = parseInt(curso__2__puntaje1);
+curso__2__puntaje2 = parseInt(curso__2__puntaje2);
+curso__2__puntaje3 = parseInt(curso__2__puntaje3);
+curso__3__puntaje1 = parseInt(curso__3__puntaje1);
+curso__3__puntaje2 = parseInt(curso__3__puntaje2);
 
-/* Course 1 average and rounded */
-let course_1_avr = (course__1__score1 + course__1__score2 + course__1__score3) / 3;
-course_1_avr = Math.round(course_1_avr * 10) / 10;
+let curso_1_final =
+  (curso__1__puntaje1 + curso__1__puntaje2 + curso__1__puntaje3) / 3;
+curso_1_final = Math.round(curso_1_final * 10) / 10;
 
-/* Course 2 average and rounded */
-let course_2_avr = (course__2__score1 + course__2__score2 + course__2__score3) / 3;
-course_2_avr = Math.round(course_2_avr * 10) / 10;
+let curso_2_final =
+  (curso__2__puntaje1 + curso__2__puntaje2 + curso__2__puntaje3) / 3;
+curso_2_final = Math.round(curso_2_final * 10) / 10;
 
-/* Web Page */
-
-/* Header opening */
-document.write(`
-<div class='conteiner row'><div class='col-6'><h1>Notas Finales</h1></div><img src='assets/img/logo.png' class='col-6 ml-5' style='height: 3rem; width: 7.875rem; padding: 0; margin-left:37.75rem'>`);
-
-/* Score table */
 document.write(`
     <div class="col-12 col-md-6">
         <table class="table table-borderless">
             <tbody>
                 <tr>
                     <th scope="row">Nombre: </th>
-                    <td>${student__name} ${student__lastname}</td>
+                    <td>${estudiante__nombre} ${estudiante__apellido}</td>
                 </tr>
                 <tr>
                     <th scope="row">Carrera: </th>
-                    <td>${grade}</td>
+                    <td>${grado}</td>
                 </tr>
             </body>
         </table>
     </div>
 `);
 
-/* Header closed */
 document.write(`
     </header>
 `);
 
-/* Courses and scores table */
-
 document.write(`
-    <div class="container">
+    <div class="container-fluid">
         <table class="table">
             <thead>
                 <tr class="table-dark">
-                    <th scope="col">Ramo</th>
-                    <th scope="col">Nota 1</th>
-                    <th scope="col">Nota 2</th>
-                    <th scope="col">Nota 3</th>
-                    <th scope="col">Promedio</th>
+                    <th scope="col">Asignatura</th>
+                    <th scope="col">Primera nota</th>
+                    <th scope="col">Segunda nota</th>
+                    <th scope="col">Tercera nota</th>
+                    <th scope="col">Promediado</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">${course__1}</th>
-                    <td>${course__1__score1}</td>
-                    <td>${course__1__score2}</td>
-                    <td>${course__1__score3}</td>
-                    <td>${course_1_avr}</td>
+                    <th scope="row">${curso__1}</th>
+                    <td>${curso__1__puntaje1}</td>
+                    <td>${curso__1__puntaje2}</td>
+                    <td>${curso__1__puntaje3}</td>
+                    <td>${curso_1_final}</td>
                 </tr>
                 <tr>
-                    <th scope="row">${course__2}</th>
-                    <td>${course__2__score1}</td>
-                    <td>${course__2__score2}</td>
-                    <td>${course__2__score3}</td>
-                    <td>${course_2_avr}</td>
+                    <th scope="row">${curso__2}</th>
+                    <td>${curso__2__puntaje1}</td>
+                    <td>${curso__2__puntaje2}</td>
+                    <td>${curso__2__puntaje3}</td>
+                    <td>${curso_2_final}</td>
                 </tr>
                 <tr>
-                    <th scope="row">${course__3}</th>
-                    <td>${course__3__score1}</td>
-                    <td>${course__3__score2}</td>
+                    <th scope="row">${curso__3}</th>
+                    <td>${curso__3__puntaje1}</td>
+                    <td>${curso__3__puntaje2}</td>
                     <td>-</td>
                     <td>-</td>
                 </tr>
@@ -105,19 +92,16 @@ document.write(`
     </div>
 `);
 
-/* Score recommendeed */
-
-/* Open container with score recommended */
 document.write('<div class="container">');
 
-/* Score required to aprove */
-let required__score = (approve__score * 3) - course__3__score1 - course__3__score2
-if (required__score < 1) {
-    required__score = 1
+let requerido =
+  aprobacion * 3 - curso__3__puntaje1 - curso__3__puntaje2;
+if (requerido < 1) {
+  requerido = 1;
 }
 
-/* Message with score required to aprove */
-document.write(`<p>Para aprobar el ramo ${course__3} con nota 4, necesitas obtener al menos un ${required__score} en la nota 3.</p>`);
+document.write(
+  `<p>Para aprobar la asignatura de ${curso__3} con nota mínima 4, tienes que sacarte un ${requerido} en la tercera nota.</p>`
+);
 
-/* Close container with score recommended */
-document.write('</div>');
+document.write("</div>");
